@@ -1,12 +1,10 @@
-
 import UserGraph from "./components/UserGraph";
+import MyRoutes from "./config/Routes/Router";
 
 function App() {
-
   return (
     <>
-      <h1>User Referral Graph</h1>
-      <UserGraph />
+      <MyRoutes />
     </>
   );
 }
