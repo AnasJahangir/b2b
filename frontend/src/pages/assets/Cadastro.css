@@ -1,0 +1,6 @@
+.Cadastro {
+  background-image: url("https://static.wixstatic.com/media/ee5968_cff542c84c0b4ed98168ca9b17ce3fbe~mv2.jpg/v1/fill/w_1349,h_186,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ee5968_cff542c84c0b4ed98168ca9b17ce3fbe~mv2.jpg");
+  background-size: cover; /* Adjusts the size of the image */
+  background-attachment: fixed; /* Keeps the image fixed in place */
+  background-position: center; /* Centers the image */
+}

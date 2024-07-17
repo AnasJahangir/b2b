@@ -1,0 +1,24 @@
+.home {
+  background-image: url("./../../assets/bg.jpg");
+  background-size: cover; /* Adjusts the size of the image */
+  background-attachment: fixed; /* Keeps the image fixed in place */
+  background-position: center; /* Centers the image */
+}
+.phase-1 {
+  background: url("./../../assets/phase1.jpg"), #000000ab;
+  background-size: cover; /* Adjusts the size of the image */
+  background-position: center; /* Centers the image */
+  background-blend-mode: multiply;
+}
+.phase-2 {
+  background: url("./../../assets/phase2.jpg"), #000000ab;
+  background-size: cover; /* Adjusts the size of the image */
+  background-position: center; /* Centers the image */
+  background-blend-mode: multiply;
+}
+.phase-3 {
+  background: url("./../../assets/phase3.jpg"), #000000ab;
+  background-size: cover; /* Adjusts the size of the image */
+  background-position: center; /* Centers the image */
+  background-blend-mode: multiply;
+}
