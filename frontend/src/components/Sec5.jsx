@@ -3,8 +3,8 @@ import Sec1 from "./../assets/sec5.webp";
 function Sec5() {
   return (
     <div className="h-[439px] flex ">
-      <div>
-        <img src={Sec1} alt="" />
+      <div className="w-[50%] ">
+        <img src={Sec1} alt="" className="w-[100%] h-[439px]"/>
       </div>
       <div className="bg-gray-50 w-[50%] px-5 py-5">
         <div>

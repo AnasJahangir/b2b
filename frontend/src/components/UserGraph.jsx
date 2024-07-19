@@ -55,7 +55,7 @@ const UserTree = () => {
     network.fit();
   };
 
-  return <div id="tree" style={{ height: "400px" }} />;
+  return <div id="tree" style={{ height: "100vh" }} />;
 };
 
 export default UserTree;
