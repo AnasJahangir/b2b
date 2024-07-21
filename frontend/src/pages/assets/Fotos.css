@@ -1,0 +1,7 @@
+.fotos-bg {
+  background: url("https://static.wixstatic.com/media/ee5968_a40e41b31b2f421fb055dafa98e8272a~mv2.jpg/v1/fill/w_1349,h_726,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ee5968_a40e41b31b2f421fb055dafa98e8272a~mv2.jpg"),
+    #000000be;
+  background-size: cover; /* Adjusts the size of the image */
+  background-position: center; /* Centers the image */
+  background-blend-mode: multiply;
+}

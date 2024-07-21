@@ -2,7 +2,7 @@ import React from "react";
 
 function Sec3() {
   return (
-    <div className="text-center py-10 px-32">
+    <div className="text-center py-10 px-10 md:px-32">
       <div className="text-[#fff]">
         <h1 className="text-[30px] text-[#E2AC1C] font-bold">
           SOMOS A EXCEÇÃO!
@@ -15,7 +15,7 @@ function Sec3() {
           porque o que noS une é maior do que as aparências.
         </p>
       </div>
-      <div className="flex justify-between items-center mt-10">
+      <div className="flex flex-col gap-5 lg:flex-row justify-between items-center mt-10">
         <img
           src="https://static.wixstatic.com/media/94bb5f_cb4fdd9685b34d74a558675acfb13102~mv2.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/94bb5f_cb4fdd9685b34d74a558675acfb13102~mv2.jpg"
           alt=""

@@ -7,10 +7,13 @@ const RegistrationForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
   const [generatedReferenceCodes, setGeneratedReferenceCodes] = useState([]);
+  const [copy, setCopy] = useState(false);
 
   const onSubmit = async (data) => {
+    console.log(data);
     try {
       const response = await axios.post(
         "http://localhost:5000/api/register",
@@ -18,24 +21,29 @@ const RegistrationForm = () => {
       );
       console.log(response.data);
       setGeneratedReferenceCodes(response.data.user.generatedReferenceCodes);
-      alert("User registered successfully");
+      reset();
     } catch (error) {
       console.error("Error registering user:", error);
       alert("Failed to register user");
     }
   };
-
+  const copyToClipboard = () => {
+    const codes = generatedReferenceCodes
+      .map((codeObj) => codeObj.code)
+      .join("\n");
+    navigator.clipboard.writeText(codes).then(() => {
+      setCopy(true);
+    });
+  };
   return (
-    <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-md my-20">
+    <div className="max-w-[600px] mx-auto p-6 form-bg shadow-md rounded-md my-20 text-white">
       <h2 className="text-2xl font-bold mb-6">Register</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Name
-          </label>
+          <label className="block text-sm font-medium text-white">Name</label>
           <input
             type="text"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black text-black"
             {...register("name", { required: "Name is required" })}
           />
           {errors.name && (
@@ -43,12 +51,10 @@ const RegistrationForm = () => {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Email
-          </label>
+          <label className="block text-sm font-medium text-white">Email</label>
           <input
             type="email"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
             {...register("email", { required: "Email is required" })}
           />
           {errors.email && (
@@ -56,12 +62,12 @@ const RegistrationForm = () => {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-white">
             Telephone
           </label>
           <input
             type="tel"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
             {...register("telephone", { required: "Telephone is required" })}
           />
           {errors.telephone && (
@@ -71,12 +77,12 @@ const RegistrationForm = () => {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-white">
             Instagram ID
           </label>
           <input
             type="text"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
             {...register("instagramId", {
               required: "Instagram ID is required",
             })}
@@ -88,12 +94,12 @@ const RegistrationForm = () => {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-white">
             Date of Birth
           </label>
           <input
             type="date"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
             {...register("dob", { required: "Date of Birth is required" })}
           />
           {errors.dob && (
@@ -101,11 +107,9 @@ const RegistrationForm = () => {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Gender
-          </label>
+          <label className="block text-sm font-medium text-white">Gender</label>
           <select
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
             {...register("gender", { required: "Gender is required" })}
           >
             <option value="">Select Gender</option>
@@ -120,14 +124,21 @@ const RegistrationForm = () => {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Reference Code (Optional)
+          <label className="block text-sm font-medium text-white">
+            Reference Code
           </label>
           <input
             type="text"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            {...register("referenceCode")}
+            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
+            {...register("referenceCode", {
+              required: "Reference Code is required",
+            })}
           />
+          {errors.referenceCode && (
+            <span className="text-red-500 text-sm">
+              {errors.referenceCode.message}
+            </span>
+          )}
         </div>
         <div className="mb-6">
           <button
@@ -146,11 +157,17 @@ const RegistrationForm = () => {
           </h3>
           <ul>
             {generatedReferenceCodes.map((codeObj, index) => (
-              <li key={index} className="text-gray-700">
+              <li key={index} className="text-white">
                 {codeObj.code}
               </li>
             ))}
           </ul>
+          <button
+            onClick={copyToClipboard}
+            className="mt-4 bg-[rgb(205,85,33)] text-white px-4 py-2 rounded-md hover:bg-red-500"
+          >
+            {copy ? "Copied" : "Copy"}
+          </button>
         </div>
       )}
     </div>

@@ -2,8 +2,8 @@ import React from "react";
 
 function Phases() {
   return (
-    <section className="flex">
-      <div className="phase-1 w-[33%] px-20 py-5">
+    <section className=" flex flex-col md:flex-row justify-center md:justify-end">
+      <div className="phase-1 md:w-[33%] px-10 md:px-20 py-5 flex flex-col justify-cente items-center">
         <h1 className="text-[20px] text-[#E4AE63] font-semibold text-center ">
           FASE1 - Venda de Pacotes
         </h1>
@@ -28,7 +28,7 @@ function Phases() {
           +55 61 9964-6866
         </p>
       </div>
-      <div className="phase-2 w-[33%] px-20 py-5">
+      <div className="phase-2 md:w-[33%] px-10 md:px-20 py-5 flex flex-col justify-cente items-center">
         <h1 className="text-[20px] text-[#E4AE63] font-semibold text-center ">
           FASE2 - Pré Venda TICKETS
         </h1>
@@ -48,7 +48,7 @@ function Phases() {
           (ingresso + translado ida e volta )
         </p>
       </div>
-      <div className="phase-3 w-[33%] px-20 py-5">
+      <div className="phase-3 md:w-[33%] px-10 md:px-20 py-5 flex flex-col justify-cente items-center">
         <h1 className="text-[20px] text-[#E4AE63] font-semibold text-center ">
           FASE3 - VENDA GERAL TICKETS
         </h1>

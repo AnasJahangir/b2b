@@ -18,6 +18,8 @@
     "react-flow-renderer": "^10.3.17",
     "react-hook-form": "^7.52.1",
     "react-router-dom": "^6.25.0",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "vis-network": "^9.1.9"
   },
   "devDependencies": {

@@ -7,9 +7,9 @@ const Header = () => {
   const [drop, setDrop] = useState(false);
   return (
     <header className="bg-black text-white">
-      <div className="container px-32 flex justify-between items-center relative">
+      <div className="container px-5 md:px-32 flex justify-between items-center relative">
         <div>
-          <img src={Logo} alt="logo" className="w-52" />
+          <img src={Logo} alt="logo" className="w-40 md:w-52" />
         </div>
         <div>
           <ul className="text-[11px] flex gap-5 ">
@@ -42,7 +42,7 @@ const Header = () => {
               </span>
               <div
                 id="dropdown"
-                class={`z-10 ${!drop && "hidden"} absolute w-44`}
+                class={`z-[100] ${!drop && "hidden"} absolute  right-5 md:right-20  top-[100%] md:top-[60%]`}
               >
                 <ul
                   class="py-4 text-[11px] flex flex-col gap-4 uppercase"

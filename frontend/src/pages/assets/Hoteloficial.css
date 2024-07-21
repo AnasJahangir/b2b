@@ -1,0 +1,25 @@
+.offhero {
+  background-image: url("https://static.wixstatic.com/media/ee5968_b339310c50004761a87a951c396373b3~mv2.jpeg/v1/fill/w_1349,h_493,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ee5968_b339310c50004761a87a951c396373b3~mv2.jpeg");
+  background-size: cover; /* Adjusts the size of the image */
+  background-position: center; /* Centers the image */
+}
+.offsec2 {
+  background: url("https://static.wixstatic.com/media/ee5968_b27680cc7e994f6e8a3d7060da6998d4~mv2.jpeg/v1/fill/w_903,h_369,al_c,q_80,enc_auto/ee5968_b27680cc7e994f6e8a3d7060da6998d4~mv2.jpeg"),
+    #0000008f;
+  background-size: cover; /* Adjusts the size of the image */
+  background-position: center; /* Centers the image */
+  background-blend-mode: multiply;
+}
+.offsec3 {
+  background: url("https://static.wixstatic.com/media/ee5968_b339310c50004761a87a951c396373b3~mv2.jpeg/v1/fill/w_1349,h_886,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ee5968_b339310c50004761a87a951c396373b3~mv2.jpeg");
+  background-size: cover; /* Adjusts the size of the image */
+  background-position: center; /* Centers the image */
+}
+
+.offsec4 {
+  background: url("https://static.wixstatic.com/media/ee5968_5e0c707d9b12447b885c6d68caa593eb~mv2.png/v1/fill/w_1499,h_656,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/ee5968_5e0c707d9b12447b885c6d68caa593eb~mv2.png"),
+    #0000008f;
+  background-size: cover; /* Adjusts the size of the image */
+  background-position: center; /* Centers the image */
+  background-blend-mode: multiply;
+}

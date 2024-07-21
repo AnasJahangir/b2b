@@ -5,8 +5,8 @@ const Hero = () => {
   return (
     <section className="bg-cover bg-center  text-white">
       <div className="container mx-auto h-full flex flex-col justify-center items-center text-center py-10">
-        <div className="shadow-md">
-          <video controls muted autoPlay width="800">
+        <div className="shadow-md flex justify-center" >
+          <video controls muted autoPlay className="w-[80%] ">
             <source
               src="https://video.wixstatic.com/video/ee5968_bb55fb4e89684976b39e70b9b83623ab/1080p/mp4/file.mp4"
               type="video/mp4"
